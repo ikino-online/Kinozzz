@@ -642,7 +642,7 @@ async def send_welcome(message: types.Message, state: FSMContext):
         datausers.add(message.from_user.id)
         current_date = date.today()
         db.db_table_val(user_id=message.from_user.id, user_name=message.from_user.username, user_register=current_date)
-    text = f'<a href="https://bot.kinozzz.ru/poster/main.png">🎞️</a> <b><u>Kinozzz Bot</u></b> — уникальный в своём роде бот, который даст Вам возможность <b>бесплатно</b> наслаждаться новинками <b>Российского</b> и <b>зарубежного</b> кинематографа с <u>любого устройства</u>.'
+    text = f'<a href="https://bot.kinozzz.ru/poster/main.png">🎞️</a> <b><u>PopCornBot</u></b> — уникальный в своём роде бот, который даст Вам возможность <b>бесплатно</b> наслаждаться новинками <b>Российского</b> и <b>зарубежного</b> кинематографа с <u>любого устройства</u>.'
     await bot.send_message(message.from_user.id, f'{text}', reply_markup=inlinekeyboard)
 
 @dp.callback_query_handler(text="popular_menu", state="*")
@@ -1631,11 +1631,11 @@ async def back_pag(call: types.CallbackQuery):
 
 @dp.callback_query_handler(text="about", state="*")
 async def send(call: types.CallbackQuery):
-  await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text= '<a href="https://bot.kinozzz.ru/poster/about.png">🎞️</a> <b><u>Kinozzz Bot</u></b> — <b>первый онлайн-кинотеатр</b> в Telegram, который предоставляет возможность <b><u>бесплатно</u></b> наслаждаться новинками <b>Российского</b> и <b>зарубежного</b> кинематографа.\n\n💡 <b>Основные возможности бота:</b>\n— Удобный поиск фильмов, сериалов, ТВ-шоу, мультфильмов и т.п. по названию;\n— <b>Подборки</b> видеоматериалов;\n— Функция <b>«Мои закладки»</b>, чтобы любимые фильмы и сериалы были всегда рядом;\n— Удобный плеер;\n— Высокое качество каждого видеоматериала;\n— Ежедневное пополнение новинками кино.', reply_markup=about)
+  await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text= '<a href="https://bot.kinozzz.ru/poster/about.png">🎞️</a> <b><u>PopCornBot</u></b> — <b>первый онлайн-кинотеатр</b> в Telegram, который предоставляет возможность <b><u>бесплатно</u></b> наслаждаться новинками <b>Российского</b> и <b>зарубежного</b> кинематографа.\n\n💡 <b>Основные возможности бота:</b>\n— Удобный поиск фильмов, сериалов, ТВ-шоу, мультфильмов и т.п. по названию;\n— <b>Подборки</b> видеоматериалов;\n— Функция <b>«Мои закладки»</b>, чтобы любимые фильмы и сериалы были всегда рядом;\n— Удобный плеер;\n— Высокое качество каждого видеоматериала;\n— Ежедневное пополнение новинками кино.', reply_markup=about)
 
 @dp.callback_query_handler(text="contacts", state="*")
 async def send(call: types.CallbackQuery):
-  await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text= '<b><a href="https://bot.kinozzz.ru/poster/contacts.png">🔥</a> Мы всегда рады новым идеям и предложениям, которые будут полезны для нашей площадки!</b>\n\n📌 <i>В случае возникновения жалоб на авторские права, обращайтесь на e-mail: <b>admin@kinozzz.ru</b></i>', reply_markup=contacts)
+  await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text= '<b><a href="https://bot.kinozzz.ru/poster/contacts.png">🔥</a> Мы всегда рады новым идеям и предложениям, которые будут полезны для нашей площадки!</b>\n\n📌', reply_markup=contacts)
 
 @dp.message_handler(commands=['stats'])
 async def statistic(message: types.Message):
@@ -2504,8 +2504,8 @@ async def back(call: types.CallbackQuery, state: FSMContext):
     await bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text= '🏠 Вы вернулись в <b>главное меню</b>.\n\n<a href="https://bot.kinozzz.ru/poster/general.png">🎦</a> Здесь вы можете выбрать <b>раздел</b>, в котором желаете найти или выбрать видеоматериал для просмотра.', reply_markup=inlinekeyboard, inline_message_id=call.inline_message_id)
 
 async def on_startup(dp: Dispatcher):
-    print('~~~ Kinozzz Bot успешно запущен! ~~~')
-    # await bot.send_message(chat_id=admin_id, text='🚀 <b>Kinozzz Bot</b> успешно запущен!\nОтправьте <b>/start</b> для обновления.')
+    print('~~~ PopCornBot успешно запущен! ~~~')
+    # await bot.send_message(chat_id=admin_id, text='🚀 <b>PopCornBot</b> успешно запущен!\nОтправьте <b>/start</b> для обновления.')
     # await update_popular_anime()
     # await update_popular_mult()
     # await update_news_films()
